@@ -1,7 +1,5 @@
 # Snowflake Guide
 
-A Python project for connecting to and working with Snowflake data warehouse.
-
 ## Current Project Structure
 
 ```
