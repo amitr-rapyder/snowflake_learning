@@ -3,10 +3,13 @@
 ## Current Project Structure
 
 ```
-Snowflake_Guide/
+snowflake/
 ├── connection.py      # Snowflake connection management
+├── cortex_functions.py # Snowflake Cortex AI functions
+├── test_connection.py # Connection and Cortex testing
 ├── lambda_function.py # Main application logic
 ├── .env              # Environment configuration
+├── requirements.txt   # Python dependencies
 └── README.md         # Project documentation
 ```
 
@@ -43,21 +46,37 @@ Snowflake_Guide/
 
 ## Usage
 
-### Testing Connection
+### Testing Connection & Cortex Functions
 ```powershell
 # From D:\Snowflake directory:
 .\venv\Scripts\Activate.ps1
-cd Snowflake_Guide
+cd snowflake
 python test_connection.py
 ```
 
 ### Project Structure
 - `connection.py`: Handles Snowflake connection establishment
+- `cortex_functions.py`: Snowflake Cortex AI function implementations
+- `test_connection.py`: Connection and Cortex function testing utility
 - `lambda_function.py`: Contains main application logic
-- `test_connection.py`: Connection testing utility
+
+## Snowflake Cortex Functions
+
+### Available Operations
+- **complete**: Text completion using AI models
+- **summarize**: Text summarization
+- **sentiment**: Sentiment analysis
+
+### Usage Example
+```python
+from cortex_functions import CORTEX_OPERATIONS
+
+result = CORTEX_OPERATIONS['complete']('What is AI?')
+print(result)
+```
 
 ## Recent Changes
 
-- Initial project setup with connection management
-- Added environment variable configuration
-- Created basic Lambda function structure
+- Added Snowflake Cortex AI function support (complete, summarize, sentiment)
+- Created modular cortex_functions.py with dynamic operations
+- Enhanced test_connection.py to test Cortex functions
